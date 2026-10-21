@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+  <rect width="96" height="96" rx="22" fill="#2f5f4f"/>
+  <path d="M22 23h52v7H22zm5 16h42v7H27zm-5 27h52v7H22z" fill="#fff" opacity=".22"/>
+  <text x="48" y="67" fill="#fff" font-family="serif" font-size="55" font-weight="700" text-anchor="middle">字</text>
+</svg>

@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "漢字一括検索",
+  "version": "0.3.0",
+  "description": "一字の漢字を複数の漢字・日本語・字源辞典でまとめて検索します。",
+  "icons": {
+    "48": "icons/kanji.svg",
+    "96": "icons/kanji.svg"
+  },
+  "action": {
+    "default_title": "漢字一括検索",
+    "default_icon": "icons/kanji.svg",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["sites.js", "background.js"],
+    "type": "classic"
+  },
+  "permissions": [
+    "menus",
+    "storage",
+    "tabGroups"
+  ],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+H"
+      },
+      "description": "漢字一括検索を開く"
+    }
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "kanji-multi-search@local",
+      "strict_min_version": "139.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
+}

@@ -1,0 +1,266 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --bg: #f7f5ef;
+  --panel: #ffffff;
+  --text: #25231e;
+  --muted: #726e64;
+  --line: #ddd8ca;
+  --accent: #2f5f4f;
+  --accent-hover: #234a3d;
+  --soft: #e8eee9;
+  --danger: #a33b36;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1d1d1a;
+    --panel: #282824;
+    --text: #f2f0e9;
+    --muted: #aaa69b;
+    --line: #48463f;
+    --accent: #70ad95;
+    --accent-hover: #89c3ac;
+    --soft: #303c36;
+    --danger: #f08a83;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 390px;
+  margin: 0;
+  color: var(--text);
+  background: var(--bg);
+}
+
+main {
+  padding: 18px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.mark {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  place-items: center;
+  border-radius: 12px;
+  color: white;
+  background: var(--accent);
+  font-family: serif;
+  font-size: 29px;
+  line-height: 1;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+header p,
+.help {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+header p {
+  margin-top: 3px;
+}
+
+label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.search-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+input[type="text"] {
+  min-width: 0;
+  height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 5px 13px 7px;
+  color: var(--text);
+  background: var(--panel);
+  font-family: serif;
+  font-size: 27px;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 7px 9px;
+  color: var(--accent);
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--soft);
+}
+
+button.primary {
+  padding: 0 16px;
+  color: white;
+  background: var(--accent);
+  font-size: 13px;
+}
+
+button.primary:hover {
+  background: var(--accent-hover);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.help {
+  margin-top: 7px;
+}
+
+.sites,
+.recent {
+  margin-top: 18px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+.selection-actions {
+  display: flex;
+  gap: 1px;
+}
+
+.site-group + .site-group {
+  margin-top: 12px;
+}
+
+.group-name {
+  margin: 0 0 5px 2px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.site-option {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 8px;
+  align-items: start;
+  margin: 0;
+  border-bottom: 1px solid var(--line);
+  padding: 8px 7px;
+  background: var(--panel);
+  cursor: pointer;
+}
+
+.site-option:first-of-type {
+  border-radius: 9px 9px 0 0;
+}
+
+.site-option:last-child {
+  border-bottom: 0;
+  border-radius: 0 0 9px 9px;
+}
+
+.site-option:only-of-type {
+  border-radius: 9px;
+}
+
+.site-option:hover {
+  background: var(--soft);
+}
+
+.site-option input {
+  width: 16px;
+  height: 16px;
+  margin: 2px 0 0;
+  accent-color: var(--accent);
+}
+
+.site-name {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.site-description {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.recent h2 {
+  margin-bottom: 7px;
+}
+
+.recent-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.recent-list button {
+  min-width: 35px;
+  padding: 4px 9px 6px;
+  background: var(--panel);
+  font-family: serif;
+  font-size: 19px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 19px;
+  margin-top: 13px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+#status.error {
+  color: var(--danger);
+}
